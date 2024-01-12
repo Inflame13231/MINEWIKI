@@ -1,0 +1,60 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 1000px;">
+    <div class="back" style="height: 680px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+            <div class="main-text">
+                {{name}}
+            </div>
+            <hr>
+            <button class="backward" onclick="document.location='/mobs'">Назад</button>
+        </div>
+        <div class="back2">
+            <div class="info">
+                Зомби (англ. Zombie) — неживые враждебные <a href="/glossary#mob">мобы</a>, атакующие игроков и <a
+                    href="/glossary#villager">деревенских жителей</a>, горящие на
+                солнце.
+                <div class="row mb-1"></div>
+                Зомби - довольно агрессивные <a href="/glossary#mob">мобы</a>. Они всегда нападают на игроков, любых <a
+                    href="/glossary#villager">жителей</a>, странствующих
+                торговцев, железных големов, снежных големов и детёнышей черепах. Если остальные <a
+                    href="/glossary#mob">мобы</a> случайно захотят
+                навредить зомби (даже если это в итоге не причинит вреда), то они сразу же станут нападать на них, пока
+                не убьют.
+                <div class="row mb-1"></div>
+                На рассвете, когда солнце находится на высоте 15 ° над землей (то есть, когда луна больше не видна), все
+                варианты зомби, загораются, оказавшись под
+                действием прямых солнечных лучей.
+            </div>
+            <div class="mobavatar">
+                <img class="mob_image" style="height: 220px; width: 220px;  margin-top: 15px;" src="/static/zombie.jpg"
+                    alt="ЗОМБИ">
+                <div class="row mb-3"></div>
+                <div class="namemobik">
+                    ЗОМБИ
+                </div>
+                <div class="description">
+                    <span style="font-weight: 600;">Здоровье:</span> 20 сердечек(40 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Урон:</span> 2 сердечка(4 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Дроп:</span> 0-2 гнилой плоти
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+        <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+                href="{{ item.URL }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        <div><i class="fa-regular fa-copyright"></i> Created by Innokentiy Kazarin</div>
+    </div>
+</div>
+{% endblock %}

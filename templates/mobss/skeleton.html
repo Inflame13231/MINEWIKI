@@ -1,0 +1,58 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 1000px;">
+    <div class="back" style="height: 680px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+            <div class="main-text">
+                {{name}}
+            </div>
+            <hr>
+            <button class="backward" onclick="document.location='/mobs'">Назад</button>
+
+        </div>
+        <div class="back2">
+            <div class="info">
+                Скелет (англ. Skeleton) — распространённый враждебный <a href="/glossary#mob">моб</a>, являющийся нежитью и
+                вооружённый луком.
+                <div class="row mb-1"></div>
+                Скелеты могут обнаружить игрока на расстоянии до 16 <a href="/glossary#block">блоков</a>, а после начинают преследовать его. Чтобы
+                выйти на оптимальную для стрельбы местность, скелет способен подниматься по ступеням и преодолевать
+                сложные препятствия, обходя различные сооружения, лаву и кактусы. Он также умеет взбираться по лестнице,
+                однако не делает этого без лишней необходимости. Находясь в пределах 15 <a href="/glossary#block">блоков</a>, скелет начнёт наносить
+                урон игроку, стреляя по нему из лука. Если игрок выйдет из радиуса атаки, то скелет будет несколько
+                секунд держать натянутой тетиву, дожидаясь того момента, когда цель снова появится в наиболее
+                удовлетворительной для стрельбы области.
+                <div class="row mb-1"></div>
+            </div>
+            <div class="mobavatar">
+                <img class="mob_image" style="height: 220px; width: 220px;  margin-top: 15px;" src="/static/skelet.jpg"
+                    alt="СКЕЛЕТ">
+                <div class="row mb-3"></div>
+                <div class="namemobik">
+                    СКЕЛЕТ
+                </div>
+                <div class="description">
+                    <span style="font-weight: 600;">Здоровье:</span> 10 сердечек(20 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Урон:</span> 0.5-2.5 сердечка(1-5 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Дроп:</span> 0-2 кости, 0-2 стрелы
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+        <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+                href="{{ item.URL }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        <div><i class="fa-regular fa-copyright"></i> Created by Innokentiy Kazarin</div>
+    </div>
+</div>
+{% endblock %}

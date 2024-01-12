@@ -1,0 +1,21 @@
+<div class="navigation_bar">
+<header>
+  <a class="logo" href="/">MineWIKI</a>
+  <input type="checkbox" id="nav_check" hidden>
+    <nav>
+      <ul>
+          {% for item in nav %}
+          <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+              href="{{ item.URL }}">{{ item.title }}</a>
+          </li>
+          {% endfor %}
+      </ul>
+    </nav>
+    <label for="nav_check" class="triple">
+      <div></div>
+      <div></div>
+      <div></div>
+    </label>
+</header>
+</div>

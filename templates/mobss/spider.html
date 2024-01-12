@@ -1,0 +1,60 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 1000px;">
+    <div class="back" style="height: 680px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+            <div class="main-text">
+                {{name}}
+            </div>
+            <hr>
+            <button class="backward" onclick="document.location='/mobs'">Назад</button>
+        </div>
+        <div class="back2">
+            <div class="info">
+                Паук (англ. Spider) — <a href="/glossary#mob">моб</a>, впервые добавленный в Survival Test. Глаза пауков
+                светятся красным цветом,
+                что позволяет легко увидеть их в темноте. В отличие от <a href="/zombie">зомби</a>, <a
+                    href="/creeper">крипера</a> и <a href="/skeleton">скелета</a> паук имеет размер 2×2×1,
+                а не 1×1×2, что позволяет ему пролезать в проходы высотой 1 и шириной 2 блока. Представляют собой
+                гигантских серо-коричневых пауков с красными глазами.
+                <div class="row mb-1"></div>
+                Пауки настроены агрессивно к игрокам, если уровень света вокруг них — 9 или меньше; в
+                противном случае пауки нейтральны, если на них не нападут сами. Если вывести паука из тёмной зоны в
+                светлую, он продолжит преследование игрока. Если паук получит урон от чего-либо помимо игрока, например,
+                от падения с высоты, он перестанет быть враждебным.
+                <div class="row mb-1"></div>
+                Пауки не сгорают с наступлением дня, но становятся нейтральными. Паук, преследовавший игрока в темноте,
+                продолжит преследовать его некоторое время и после рассвета.
+            </div>
+            <div class="mobavatar">
+                <img class="mob_image" style="height: 220px; width: 220px;  margin-top: 15px;" src="/static/spider.jpg"
+                    alt="ПАУК">
+                <div class="row mb-3"></div>
+                <div class="namemobik">
+                    ПАУК
+                </div>
+                <div class="description">
+                    <span style="font-weight: 600;">Здоровье:</span> 8 сердечек(16 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Урон:</span> 1.5 сердечка(3 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Дроп:</span> 0-3 нитки, 0-1 паучий глаз
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+        <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+                href="{{ item.URL }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        <div><i class="fa-regular fa-copyright"></i> Created by Innokentiy Kazarin</div>
+    </div>
+</div>
+{% endblock %}

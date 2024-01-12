@@ -1,0 +1,48 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 800px;">
+    <div class="back" style="height: 450px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+            <div class="about_items_align">
+
+            </div>
+            <div class="main-text">
+                {{name}}
+           </div>
+           <hr>
+           <div class="about_items_align">
+            <div class="photka">
+                <img class="myPhoto" src="/static/photo.jpg" alt="Моя фотография">
+                <div class="about_photo_text">Иннокентий Казарин</div>
+               </div> 
+               <div class="about_text">
+                Я, Казарин Иннокентий Андреевич. 
+                <div class="row mb-2"></div>
+                Родился я 15 ноября 2004 года в г. Черемхово, где и прожил 18 лет своей жизни, после этого поступив в г. Иркутск
+                <div class="row mb-2"></div>
+                Считаю себя будущим front-end программистом, а может и full-stack, кто знает. 
+                <div class="row mb-2"></div>
+                Учусь в ИРНИТУ (Иркутский Национальный Исследовательский Технический Университет) на программе "Информационные системы и технологии"
+                <div class="row mb-2"></div>
+                Увлекаюсь волейболом, раньше занимался плаванием и даже занимал 2-ое место на соревнованиях Иркутской Области
+                <div class="row mb-2"></div>
+                В 2023 году сдавал ЕГЭ и сдал его на: Математика - 70, Информатика - 78, Русский язык - 79. Тогда я и подумать не мог, что программировать может быть так интересно
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+          <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+              href="{{ item.URL }}">{{ item.title }}</a>
+          </li>
+    {% endfor %}
+    <div >Created by Innokentiy Kazarin</div>
+</div>
+</div>
+{% endblock %}

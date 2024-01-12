@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand" style="background-color: #357523">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://127.0.0.1:5000/">
+      <img src="\static\logo.svg" alt="Logo" width="48" height="48" class="d-inline-block">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {% for item in nav %}
+        <li class="nav-item">
+          <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+            href="{{ item.URL }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>

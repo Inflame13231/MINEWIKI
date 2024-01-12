@@ -1,0 +1,60 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 1000px;">
+    <div class="back" style="height: 700px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+            <div class="main-text">
+                {{name}}
+            </div>
+            <hr>
+            <button class="backward" onclick="document.location='/mobs'">Назад</button>
+        </div>
+        <div class="back2">
+            <div class="info">
+                Крипер (англ. Creeper) — это распространённый враждебный <a href="/glossary#mob">моб</a>, который тихо
+                подкрадывается к игроку и
+                взрывается. Из-за своего особенного внешнего вида и высокой эффективности убийства неосторожных игроков,
+                а также нанесения ущерба миру и постройкам игроков, крипер стал одним из главных символов <a
+                    href="/glossary#mine">Minecraft</a>.
+                <div class="row mb-1"></div>
+                Криперы являются основным источником <a href="/glossary#poroh">пороха</a> и единственным источником некоторых
+                <a href="/glossary#plast">пластинок</a>. При ударе
+                молнии крипер становится <a href="/glossary#chcrpr">заряженным</a>, что увеличивает силу его взрыва и позволяет получить головы мобов.
+                <div class="row mb-1"></div>
+                Крипер выглядит как безрукий гуманоид с четырьмя короткими ногами, большими чёрными когтями, зелёной
+                кожей похожей на листья с небольшим количеством серых пятен, большими пустыми глазницами/чёрными глазами
+                и ртом, изогнутом в грустном (или угрожающем) выражении. По словам <a href="/glossary#notch">Нотча</a>, на ощупь криперы «хрусткие,
+                как сухие листья».
+            </div>
+            <div class="mobavatar">
+                <img class="mob_image" style="height: 220px; width: 220px;  margin-top: 15px;" src="/static/creeper.jpg"
+                    alt="КРИПЕР">
+                <div class="row mb-3"></div>
+                <div class="namemobik">
+                    КРИПЕР
+                </div>
+                <div class="description">
+                    <span style="font-weight: 600;">Здоровье:</span> 10 сердечек(20 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Урон:</span> 24.5 сердечка(49 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Дроп:</span> 0-2 пороха, пластинка(если убит скелетом)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+        <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+                href="{{ item.URL }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        <div><i class="fa-regular fa-copyright"></i> Created by Innokentiy Kazarin</div>
+    </div>
+</div>
+{% endblock %}

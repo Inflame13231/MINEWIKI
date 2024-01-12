@@ -1,0 +1,59 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 1000px;">
+    <div class="back" style="height: 650px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+            <div class="main-text">
+                {{name}}
+            </div>
+            <hr>
+            <button class="backward" onclick="document.location='/mobs'">Назад</button>
+        </div>
+        <div class="back2">
+            <div class="info">
+                Эндермен — нейтральный <a href="/glossary#mob">моб</a>, обитающий во всех трёх <a
+                    href="/glossary#dimens">измерениях</a> и
+                способный телепортироваться, а также поднимать некоторые блоки.
+                <div class="row mb-1"></div>
+                Эндермен выглядит как высокий чёрный гуманоид с длинными руками, длинными ногами и коротким
+                туловищем. Его глаза фиолетового цвета. Вокруг <a href="/glossary#mob">мобa</a> летают фиолетовые частицы,
+                подобные тем,
+                которые летают возле <a href="/glossary#portal">портала</a> в <a href="/glossary#hell">Нижний мир</a>. Эндермен
+                примечателен тем, что у него подвижна не
+                нижняя, а верхняя челюсть, которая соединена с нижней челюстью только двумя выдвигающимися суставами.
+                <div class="row mb-1"></div>
+                Эндермен получает урон, находясь в воде и под дождём. Попав в подобные условия, он сразу начинает
+                телепортироваться в безопасное место.
+            </div>
+            <div class="mobavatar">
+                <img class="mob_image" style="height: 220px; width: 220px;  margin-top: 15px;"
+                    src="/static/enderman.jpeg" alt="ЭНДЕРМЕН">
+                <div class="row mb-3"></div>
+                <div class="namemobik">
+                    ЭНДЕРМЕН
+                </div>
+                <div class="description">
+                    <span style="font-weight: 600;">Здоровье:</span> 20 сердечек(40 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Урон:</span> 3.5 сердечка(7 ХП)
+                    <div class="row mb-1"></div>
+                    <span style="font-weight: 600;">Дроп:</span> 0-1 жемчуга края
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+        <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+                href="{{ item.URL }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+        <div><i class="fa-regular fa-copyright"></i> Created by Innokentiy Kazarin</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="ground" style="height: 800px;">
+    <div class="back" style="height: 320px;">
+        <div class="row mb-2"></div>
+        <div class="location">
+           <div class="main-text">
+                {{name}}
+           </div>
+           <hr>
+           <div class="full">
+                <div class="half_1">
+                    <a href="https://vk.com/oyya_kesha"><i class="fa-brands fa-vk"></i> VK</a>
+                    <div class="row mb-1"></div>
+                    <a href="https://t.me/oyya_kesha"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                    <div class="row mb-1"></div>
+                    <div class="gmail"><i class="fa-solid fa-envelope"></i> keshak12345@gmail.com</div>
+                </div>
+                <div class="half_2">
+                    <a href="https://github.com/Inflame13231">GitHub <i class="fa-brands fa-github"></i></i></a>
+                    <div class="row mb-1"></div>
+                    <a href="https://steamcommunity.com/id/INFLAXOT1c/">Steam <i class="fa-brands fa-steam"></i></i></i></a>
+                    <div class="row mb-1"></div>
+                    <div class="number">+79149146477 <i class="fa-solid fa-phone"></i></div>
+                </div>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="bottombot">
+    <div class="navbot">
+        {% for item in nav %}
+          <li class="nav-item">
+            <a class="nav-link {% if item.title == name %} active {% endif %}" aria-current="page"
+              href="{{ item.URL }}">{{ item.title }}</a>
+          </li>
+    {% endfor %}
+    <div >Created by Innokentiy Kazarin</div>
+</div>
+</div>
+{% endblock %}
